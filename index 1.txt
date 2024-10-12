@@ -1,0 +1,254 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>NASAZEED168</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      background-color: #000000;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .profile {
+      text-align: center;
+      padding: 20px;
+      background: url(https://img5.pic.in.th/file/secure-sv1/cherry-blossom-pink-bird-phone-wallpaper-4k-uhdpaper.com-1732a.jpg) no-repeat center center/cover;
+      border-radius: 50px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 600px;
+      box-sizing: border-box;
+    }
+    .profile img {
+      border-radius: 0%;
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+    }
+    .profile h1 {
+      margin: 10px 0;
+      color: gold;
+    }
+    .profile p {
+      color: gold;
+    }
+    .buttons {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .buttons button {
+      text-align: center;
+      margin: 5px;
+      padding: 15px 20px;
+      border: none;
+      border-radius: 10px;
+      color: #fff;
+      cursor: pointer;
+      font-size: 16px;
+      flex: 1 1 30%;
+      max-width: 150px;
+      min-width: 100px;
+      animation: bounce 5s infinite;
+    }
+    .red {
+      background-color: black;
+      display: none; /* Hide red button initially */
+    }
+    .blue {
+      background-color: black;
+    }
+    .yellow {
+      background-color: green;
+      color: #000;
+    }
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-30px);
+      }
+      60% {
+        transform: translateY(-15px);
+      }
+    }
+    @media (max-width: 600px) {
+      .profile {
+        padding: 15px;
+      }
+      .profile img {
+        width: 80%;
+      }
+      .buttons button {
+        font-size: 14px;
+        padding: 10px 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="profile">
+    <img src="https://img5.pic.in.th/file/secure-sv1/NAGA-ZEED-168-PNG--new.png">
+    <img src="https://img2.pic.in.th/pic/nagazeed-1040-9256aa801833e5b8.jpg">
+    <h1>NAGAZEED168</h1>
+    <p>คิดถึงมากเลยนะค่ะ ตัวเองง</p>
+    <div class="buttons">
+      <button class="red" id="btnShare" onclick="sendShare()">แชร์ให้เพื่อน</button>
+      <button class="blue" id="btnLogin" onclick="login()">Log In</button>
+    </div>
+  </div>
+  
+  <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+  <script>
+    async function sendShare() {
+      try {
+        const result = await liff.shareTargetPicker([
+          {
+            "type": "flex",
+            "altText": "Flex Message",
+            "contents": {
+              "type": "bubble",
+              "hero": {
+                "type": "image",
+                "url": "https://img2.pic.in.th/pic/nagazeed-1040-9256aa801833e5b8.jpg",
+                "align": "center",
+                "size": "full",
+                "aspectRatio": "1:1",
+                "aspectMode": "fit",
+                "backgroundColor": "#CC3333",
+                "action": {
+                  "type": "uri",
+                  "label": "Line",
+                  "uri": "https://warp.bz/HL-Naga"
+                }
+              },
+              "body": {
+                "type": "box",
+                "layout": "vertical",
+                "spacing": "md",
+                "backgroundColor": "#CC3333",
+                "borderColor": "#CC3333",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "แจกเครดิตฟรี 50฿",
+                    "weight": "bold",
+                    "size": "xxl",
+                    "color": "#FFFFFFFF",
+                    "align": "center",
+                    "contents": []
+                  },
+                  {
+                    "type": "text",
+                    "text": "โปรโมชั่นเพิ่มเติม แจกทุกวัน",
+                    "weight": "regular",
+                    "size": "lg",
+                    "color": "#FFFFFFFF",
+                    "align": "center",
+                    "contents": []
+                  }
+                ]
+              },
+              "footer": {
+                "type": "box",
+                "layout": "vertical",
+                "flex": 0,
+                "spacing": "md",
+                "backgroundColor": "#CC3333",
+                "borderColor": "#CC3333",
+                "contents": [
+                  {
+                    "type": "button",
+                    "action": {
+                      "type": "uri",
+                      "label": "กดรับเครดิตฟรี",
+                      "uri": "https://warp.bz/HL-Naga"
+                    },
+                    "color": "#FF0033",
+                    "style": "primary"
+                  },
+                  {
+                    "type": "button",
+                    "action": {
+                      "type": "uri",
+                      "label": "แชร์ให้เพื่อนเลย",
+                      "uri": "https://liff.line.me/2006134628-naEBYDzA"
+                    },
+                    "color": "#FF0033",
+                    "style": "primary"
+                  },
+                  {
+                    "type": "spacer",
+                    "size": "xs"
+                  }
+                ]
+              }
+            }
+          }
+        ]);
+        if (result) {
+          alert(`[${result.status}] Message sent!`);
+        } else {
+          const [majorVer, minorVer, patchVer] = (liff.getLineVersion() || "").split('.');
+          if (minorVer === undefined) {
+            alert('ShareTargetPicker was canceled in external browser');
+            return;
+          }
+          if (parseInt(majorVer) >= 10 && parseInt(minorVer) >= 10 && parseInt(patchVer) > 0) {
+            alert('ShareTargetPicker was canceled in LINE app');
+          }
+        }
+      } catch (error) {
+        console.error('Error sharing message:', error);
+        alert('Error sharing message. Check console for details.');
+      }
+    }
+
+    async function login() {
+      try {
+        await liff.login();
+        document.getElementById("btnLogin").style.display = "none";
+        document.getElementById("btnShare").style.display = "block";
+      } catch (error) {
+        console.error('Error logging in:', error);
+        alert('Error logging in. Check console for details.');
+      }
+    }
+
+    function logOut() {
+      liff.logout();
+      window.location.reload();
+    }
+
+    async function main() {
+      try {
+        await liff.init({ liffId: "2006134628-naEBYDzA" });
+        if (liff.isLoggedIn()) {
+          document.getElementById("btnShare").style.display = "block";
+          if (!liff.isInClient()) {
+            document.getElementById("btnLogOut").style.display = "block";
+          }
+        } else {
+          document.getElementById("btnLogin").style.display = "block";
+        }
+      } catch (error) {
+        console.error('Error initializing LIFF app:', error);
+        alert('Error initializing LIFF app. Check console for details.');
+      }
+    }
+
+    main();
+  </script>
+</body>
+</html>
